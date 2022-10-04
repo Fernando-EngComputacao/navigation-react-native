@@ -23,7 +23,11 @@ export default function Produtores({ melhoresProdutores }) {
   return <FlatList
     data={lista}
     renderItem={
-      ({ item }) => <Produtor {...item} aoPressionar={() => {}} />
+      ({ item }) => <Produtor {...item}
+        aoPressionar={() => {
+            navigation.navigate('Produtor', item)
+          }
+        } />
     }
     keyExtractor={({ nome }) => nome}
     ListHeaderComponent={TopoLista}

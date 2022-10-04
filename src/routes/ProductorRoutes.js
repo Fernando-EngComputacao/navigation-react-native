@@ -4,11 +4,11 @@ import React from "react";
 import Produtor from "../screens/Produtor";
 import Home from '../screens/Home';
 
-export default function ProductorRoutes() {
+export default function ProductorRoutes({ComponentePrincipal = Home}) {
     const Stack = createNativeStackNavigator();
 
     return <Stack.Navigator>
-        <Stack.Screen name="HomeScreen" component={Home} />
+        <Stack.Screen name="HomeScreen" component={ComponentePrincipal} />
         <Stack.Screen name="Produtor" component={Produtor} />
     </Stack.Navigator>
 
