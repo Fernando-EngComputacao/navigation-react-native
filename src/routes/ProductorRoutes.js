@@ -7,7 +7,7 @@ import Home from '../screens/Home';
 export default function ProductorRoutes({ComponentePrincipal = Home}) {
     const Stack = createNativeStackNavigator();
 
-    return <Stack.Navigator>
+    return <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="HomeScreen" component={ComponentePrincipal} />
         <Stack.Screen name="Produtor" component={Produtor} />
     </Stack.Navigator>
