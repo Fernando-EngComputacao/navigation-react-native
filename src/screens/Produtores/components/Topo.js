@@ -5,12 +5,12 @@ import logo from '../../../assets/logo.png';
 import useTextos from '../../../hooks/useTextos';
 
 export default function Topo({ melhoresProdutores }) {
-  const { boasVindas, legenda, legendaMelhoresProdutores } = useTextos();
-
+  const { nome, boasVindas, legenda, legendaMelhoresProdutores } = useTextos();
+  const boasVindasFinal = boasVindas+", "+nome+"!"
   return <>
     <View style={estilos.topo}>
       <Image source={logo} style={estilos.imagem} />
-      <Text style={estilos.boasVindas}>{melhoresProdutores ? "" : boasVindas}</Text>
+      <Text style={estilos.boasVindas}>{melhoresProdutores ? "" : boasVindasFinal}</Text>
       <Text style={estilos.legenda}>{melhoresProdutores ? legendaMelhoresProdutores : legenda}</Text>
     </View>    
   </>
