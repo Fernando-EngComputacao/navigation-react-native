@@ -23,6 +23,7 @@ export default function Produtores({ melhoresProdutores }) {
   useEffect(() => {
     setExibirMensagem(!!nomeCompra);
     let timeOut = (nomeCompra ? setTimeout(() => { setExibirMensagem(false)},3000) : null);
+    return () => clearTimeout(timeOut);
   },[timeStampCompra]);
 
   const TopoLista = () => {
