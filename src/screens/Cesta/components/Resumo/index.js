@@ -55,7 +55,7 @@ export default function Resumo() {
 
           <TouchableOpacity
             style={[estilos.botao, estilos.botaoProdutor]}
-            onPress={() => { navigation.navigate('Produtor') }}>
+            onPress={() => { navigation.navigate('HomeScreen') }}>
             <Text style={[estilos.textoBotao, estilos.textoBotaoProdutor]}>
               {botaoProdutorCompra}
             </Text>
