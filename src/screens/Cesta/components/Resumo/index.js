@@ -12,7 +12,7 @@ export default function Resumo() {
   const route = useRoute();
 
   const {
-    nome, 
+    nome,
     mensagemCompra,
     topoCompra,
     tituloCompra,
@@ -22,7 +22,7 @@ export default function Resumo() {
 
   const nomeDaCesta = route.params?.compra.nome;
   const mensagemCompraFinal = mensagemCompra?.replace('$NOME', nomeDaCesta);
-  const tituloCompraFinal = tituloCompra+nome+"!";
+  const tituloCompraFinal = tituloCompra + nome + "!";
 
 
   return <ScrollView style={estilos.tela}>
@@ -43,22 +43,24 @@ export default function Resumo() {
       <View style={estilos.textos}>
         <Text style={estilos.titulo}>{tituloCompraFinal}</Text>
         <Text style={estilos.mensagem}>
-           {mensagemCompraFinal}
+          {mensagemCompraFinal}
         </Text>
 
-        <TouchableOpacity
-          style={estilos.botao}
-          onPress={() => {navigation.navigate('HomeScreen')}}>
-          <Text style={estilos.textoBotao}>{botaoHomeCompra}</Text>
-        </TouchableOpacity>
+        <View style={estilos.viewTouchableOpacity}>
+          <TouchableOpacity
+            style={estilos.botao}
+            onPress={() => { navigation.navigate('HomeScreen') }}>
+            <Text style={estilos.textoBotao}>{botaoHomeCompra}</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity
-          style={[estilos.botao, estilos.botaoProdutor]}
-          onPress={() => {navigation.navigate('Produtor')}}>
-          <Text style={[estilos.textoBotao, estilos.textoBotaoProdutor ]}>
-            {botaoProdutorCompra}
-          </Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={[estilos.botao, estilos.botaoProdutor]}
+            onPress={() => { navigation.navigate('Produtor') }}>
+            <Text style={[estilos.textoBotao, estilos.textoBotaoProdutor]}>
+              {botaoProdutorCompra}
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   </ScrollView>
@@ -131,7 +133,9 @@ const estilos = StyleSheet.create({
     marginTop: 16,
     backgroundColor: "#2A9F85",
     paddingVertical: 16,
-    borderRadius: 6,
+    borderRadius: 12,
+    width: 160,
+    marginBottom: 12,
   },
   textoBotao: {
     textAlign: "center",
@@ -139,14 +143,19 @@ const estilos = StyleSheet.create({
     fontSize: 16,
     lineHeight: 26,
     fontWeight: "bold",
+    marginHorizontal: 12,
   },
   botaoProdutor: {
     backgroundColor: "#fff",
     borderWidth: 1,
     borderColor: "#ECECEC",
-    marginBottom: 8,
   },
   textoBotaoProdutor: {
     color: "#464646",
+  },
+  viewTouchableOpacity: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
   },
 });
