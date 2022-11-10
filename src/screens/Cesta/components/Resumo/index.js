@@ -11,6 +11,8 @@ export default function Resumo() {
   const navigation = useNavigation();
   const route = useRoute();
 
+  console.log(route);
+
   const {
     nome,
     mensagemCompra,
@@ -49,7 +51,7 @@ export default function Resumo() {
         <View style={estilos.viewTouchableOpacity}>
           <TouchableOpacity
             style={estilos.botao}
-            onPress={() => { navigation.navigate('HomeScreen') }}>
+            onPress={({item}) => { navigation.navigate('Cesta',item) }}>
             <Text style={estilos.textoBotao}>{botaoHomeCompra}</Text>
           </TouchableOpacity>
 
@@ -70,6 +72,7 @@ const estilos = StyleSheet.create({
   tela: {
     flex: 1,
     backgroundColor: "#FFF",
+    height: '100%',
   },
   topo: {
     zIndex: 1,
@@ -157,5 +160,6 @@ const estilos = StyleSheet.create({
     display: 'flex',
     justifyContent: 'space-between',
     flexDirection: 'row',
+    maxHeight: '100%',
   },
 });

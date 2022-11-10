@@ -3,11 +3,14 @@ import { Image, StyleSheet, View, TouchableOpacity } from 'react-native';
 
 import useTextos from '../../../hooks/useTextos';
 import Texto from '../../../components/Texto';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 export default function Detalhes({ nome, produtor, descricao, preco }) {
   const navigation = useNavigation();
   const { botaoComprar } = useTextos();
+  const route = useRoute();
+
+  console.log("Detalhes -> ",route);
 
   return <>
     <Texto style={estilos.nome}>{ nome }</Texto>
